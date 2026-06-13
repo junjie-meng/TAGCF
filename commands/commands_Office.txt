@@ -1,0 +1,9 @@
+python encoder/train_encoder.py --model lightgcn --dataset Office --cuda 0 --emb_size 64
+python encoder/train_encoder.py --model lightgcn_plus --dataset Office --cuda 0 --emb_size 64
+python encoder/train_encoder.py --model lightgcn_gene --dataset Office --cuda 0 --emb_size 64
+python encoder/train_encoder.py --model sgl --dataset Office --cuda 0 --emb_size 64
+python encoder/train_encoder.py --model sgl_plus --dataset Office --cuda 0 --emb_size 64
+python encoder/train_encoder.py --model sgl_gene --dataset Office --cuda 0 --emb_size 64
+python encoder/train_encoder.py --model simgcl --dataset Office --cuda 0 --emb_size 64
+python encoder/train_encoder.py --model simgcl_plus --dataset Office --cuda 0 --emb_size 64
+python encoder/train_encoder.py --model simgcl_gene --dataset Office --cuda 0 --emb_size 64

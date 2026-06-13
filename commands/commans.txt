@@ -1,0 +1,3 @@
+python encoder/train_encoder.py --model simgcl_rgcn --dataset amazon --cuda 6
+python encoder/train_encoder.py --model simgcl_rgcn --dataset amazon --cuda 6
+python encoder/train_encoder.py --model simgcl_rgcn --dataset amazon --cuda 6

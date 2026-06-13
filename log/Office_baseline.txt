@@ -1,0 +1,322 @@
+Start time: Mon Sep 29 14:52:17 CST 2025
+Output file: log/Office_baseline.txt
+Total commands: 9
+======================================
+
+======== Command 1 / 9 ========
+Command: python encoder/train_encoder.py --model lightgcn --dataset Office --cuda 0 --emb_size 64
+Start: Mon Sep 29 14:52:17 CST 2025
+--- STDOUT/STDERR BEGIN ---
+/root/RLMRec/encoder/data_utils/data_handler_general_cf.py:86: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return t.sparse.FloatTensor(idxs, vals, shape).to(configs['device'])
+{'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': False, 'loss': 'pairwise', 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_cf', 'name': 'Office', 'user_num': 6338, 'item_num': 4461}, 'model': {'name': 'lightgcn', 'keep_rate': 0.8, 'embedding_size': 64, 'layer_num': 3, 'reg_weight': 1e-06, 'amazon': {'layer_num': 3, 'reg_weight': 1e-06}, 'yelp': {'layer_num': 3, 'reg_weight': 1e-06}, 'steam': {'layer_num': 2, 'reg_weight': 1e-06}}}
+Epoch   0 Validation set [recall@5: 0.0045 recall@10: 0.0080 recall@20: 0.0137 ] [ndcg@5: 0.0037 ndcg@10: 0.0051 ndcg@20: 0.0070 ] 
+Epoch   3 Validation set [recall@5: 0.0230 recall@10: 0.0403 recall@20: 0.0635 ] [ndcg@5: 0.0189 ndcg@10: 0.0259 ndcg@20: 0.0336 ] 
+Epoch   6 Validation set [recall@5: 0.0217 recall@10: 0.0389 recall@20: 0.0636 ] [ndcg@5: 0.0180 ndcg@10: 0.0251 ndcg@20: 0.0332 ] 
+Epoch   9 Validation set [recall@5: 0.0237 recall@10: 0.0412 recall@20: 0.0690 ] [ndcg@5: 0.0199 ndcg@10: 0.0271 ndcg@20: 0.0362 ] 
+Epoch  12 Validation set [recall@5: 0.0261 recall@10: 0.0431 recall@20: 0.0719 ] [ndcg@5: 0.0219 ndcg@10: 0.0288 ndcg@20: 0.0383 ] 
+Epoch  15 Validation set [recall@5: 0.0272 recall@10: 0.0459 recall@20: 0.0765 ] [ndcg@5: 0.0228 ndcg@10: 0.0305 ndcg@20: 0.0406 ] 
+Epoch  18 Validation set [recall@5: 0.0294 recall@10: 0.0483 recall@20: 0.0799 ] [ndcg@5: 0.0245 ndcg@10: 0.0321 ndcg@20: 0.0425 ] 
+Epoch  21 Validation set [recall@5: 0.0315 recall@10: 0.0499 recall@20: 0.0824 ] [ndcg@5: 0.0264 ndcg@10: 0.0337 ndcg@20: 0.0445 ] 
+Epoch  24 Validation set [recall@5: 0.0326 recall@10: 0.0519 recall@20: 0.0840 ] [ndcg@5: 0.0273 ndcg@10: 0.0351 ndcg@20: 0.0456 ] 
+Epoch  27 Validation set [recall@5: 0.0333 recall@10: 0.0535 recall@20: 0.0855 ] [ndcg@5: 0.0281 ndcg@10: 0.0363 ndcg@20: 0.0468 ] 
+Epoch  30 Validation set [recall@5: 0.0333 recall@10: 0.0540 recall@20: 0.0875 ] [ndcg@5: 0.0286 ndcg@10: 0.0370 ndcg@20: 0.0480 ] 
+Epoch  33 Validation set [recall@5: 0.0343 recall@10: 0.0548 recall@20: 0.0878 ] [ndcg@5: 0.0297 ndcg@10: 0.0380 ndcg@20: 0.0489 ] 
+Epoch  36 Validation set [recall@5: 0.0354 recall@10: 0.0555 recall@20: 0.0894 ] [ndcg@5: 0.0309 ndcg@10: 0.0391 ndcg@20: 0.0502 ] 
+Epoch  39 Validation set [recall@5: 0.0355 recall@10: 0.0559 recall@20: 0.0902 ] [ndcg@5: 0.0310 ndcg@10: 0.0394 ndcg@20: 0.0506 ] 
+Epoch  42 Validation set [recall@5: 0.0365 recall@10: 0.0566 recall@20: 0.0910 ] [ndcg@5: 0.0316 ndcg@10: 0.0397 ndcg@20: 0.0510 ] 
+Epoch  45 Validation set [recall@5: 0.0364 recall@10: 0.0564 recall@20: 0.0910 ] [ndcg@5: 0.0316 ndcg@10: 0.0398 ndcg@20: 0.0511 ] 
+Epoch  48 Validation set [recall@5: 0.0370 recall@10: 0.0577 recall@20: 0.0914 ] [ndcg@5: 0.0319 ndcg@10: 0.0403 ndcg@20: 0.0514 ] 
+Epoch  51 Validation set [recall@5: 0.0367 recall@10: 0.0579 recall@20: 0.0923 ] [ndcg@5: 0.0319 ndcg@10: 0.0405 ndcg@20: 0.0517 ] 
+Epoch  54 Validation set [recall@5: 0.0365 recall@10: 0.0591 recall@20: 0.0920 ] [ndcg@5: 0.0320 ndcg@10: 0.0412 ndcg@20: 0.0519 ] 
+Epoch  57 Validation set [recall@5: 0.0370 recall@10: 0.0591 recall@20: 0.0916 ] [ndcg@5: 0.0324 ndcg@10: 0.0413 ndcg@20: 0.0520 ] 
+Epoch  60 Validation set [recall@5: 0.0367 recall@10: 0.0595 recall@20: 0.0921 ] [ndcg@5: 0.0323 ndcg@10: 0.0415 ndcg@20: 0.0523 ] 
+Epoch  63 Validation set [recall@5: 0.0372 recall@10: 0.0595 recall@20: 0.0933 ] [ndcg@5: 0.0324 ndcg@10: 0.0414 ndcg@20: 0.0525 ] 
+Epoch  66 Validation set [recall@5: 0.0368 recall@10: 0.0591 recall@20: 0.0933 ] [ndcg@5: 0.0324 ndcg@10: 0.0414 ndcg@20: 0.0527 ] 
+Epoch  69 Validation set [recall@5: 0.0372 recall@10: 0.0591 recall@20: 0.0929 ] [ndcg@5: 0.0326 ndcg@10: 0.0414 ndcg@20: 0.0526 ] 
+Epoch  72 Validation set [recall@5: 0.0372 recall@10: 0.0602 recall@20: 0.0928 ] [ndcg@5: 0.0326 ndcg@10: 0.0419 ndcg@20: 0.0527 ] 
+Epoch  75 Validation set [recall@5: 0.0372 recall@10: 0.0595 recall@20: 0.0923 ] [ndcg@5: 0.0325 ndcg@10: 0.0416 ndcg@20: 0.0525 ] 
+Epoch  78 Validation set [recall@5: 0.0373 recall@10: 0.0595 recall@20: 0.0927 ] [ndcg@5: 0.0325 ndcg@10: 0.0415 ndcg@20: 0.0525 ] 
+[recall@5: 0.0372 recall@10: 0.0595 recall@20: 0.0933 ] [ndcg@5: 0.0324 ndcg@10: 0.0414 ndcg@20: 0.0525 ] 
+[recall@5: 0.0336 recall@10: 0.0548 recall@20: 0.0889 ] [ndcg@5: 0.0320 ndcg@10: 0.0413 ndcg@20: 0.0538 ] 
+Best Epoch 63. Final test result: {'recall': array([0.03362414, 0.05479376, 0.08890779]), 'ndcg': array([0.03199961, 0.04125452, 0.05378921])}.
+--- STDOUT/STDERR END (exit=0) ---
+Finish: Mon Sep 29 14:53:05 CST 2025
+Status: SUCCESS
+Duration: 48s
+======== End of Command 1 ========
+
+======== Command 2 / 9 ========
+Command: python encoder/train_encoder.py --model lightgcn_plus --dataset Office --cuda 0 --emb_size 64
+Start: Mon Sep 29 14:53:05 CST 2025
+--- STDOUT/STDERR BEGIN ---
+/root/RLMRec/encoder/data_utils/data_handler_general_cf.py:86: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return t.sparse.FloatTensor(idxs, vals, shape).to(configs['device'])
+{'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': True, 'loss': 'pairwise', 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_cf', 'name': 'Office', 'user_num': 6338, 'item_num': 4461}, 'model': {'name': 'lightgcn_plus', 'keep_rate': 0.8, 'embedding_size': 64, 'layer_num': 3, 'reg_weight': 1e-07, 'kd_weight': 0.01, 'kd_temperature': 0.2, 'amazon': {'layer_num': 3, 'reg_weight': 1e-07, 'kd_weight': 0.01, 'kd_temperature': 0.2}, 'yelp': {'layer_num': 3, 'reg_weight': 1e-07, 'kd_weight': 0.01, 'kd_temperature': 0.2}, 'steam': {'layer_num': 3, 'reg_weight': 1e-08, 'kd_weight': 0.001, 'kd_temperature': 0.1}}}
+Epoch   0 Validation set [recall@5: 0.0036 recall@10: 0.0059 recall@20: 0.0103 ] [ndcg@5: 0.0030 ndcg@10: 0.0040 ndcg@20: 0.0054 ] 
+Epoch   3 Validation set [recall@5: 0.0091 recall@10: 0.0137 recall@20: 0.0225 ] [ndcg@5: 0.0084 ndcg@10: 0.0102 ndcg@20: 0.0131 ] 
+Epoch   6 Validation set [recall@5: 0.0182 recall@10: 0.0290 recall@20: 0.0437 ] [ndcg@5: 0.0162 ndcg@10: 0.0207 ndcg@20: 0.0255 ] 
+Epoch   9 Validation set [recall@5: 0.0263 recall@10: 0.0404 recall@20: 0.0635 ] [ndcg@5: 0.0229 ndcg@10: 0.0287 ndcg@20: 0.0363 ] 
+Epoch  12 Validation set [recall@5: 0.0272 recall@10: 0.0434 recall@20: 0.0704 ] [ndcg@5: 0.0234 ndcg@10: 0.0300 ndcg@20: 0.0389 ] 
+Epoch  15 Validation set [recall@5: 0.0275 recall@10: 0.0454 recall@20: 0.0738 ] [ndcg@5: 0.0237 ndcg@10: 0.0309 ndcg@20: 0.0402 ] 
+Epoch  18 Validation set [recall@5: 0.0288 recall@10: 0.0476 recall@20: 0.0774 ] [ndcg@5: 0.0251 ndcg@10: 0.0328 ndcg@20: 0.0425 ] 
+Epoch  21 Validation set [recall@5: 0.0311 recall@10: 0.0498 recall@20: 0.0803 ] [ndcg@5: 0.0273 ndcg@10: 0.0349 ndcg@20: 0.0449 ] 
+Epoch  24 Validation set [recall@5: 0.0320 recall@10: 0.0517 recall@20: 0.0813 ] [ndcg@5: 0.0282 ndcg@10: 0.0363 ndcg@20: 0.0461 ] 
+Epoch  27 Validation set [recall@5: 0.0343 recall@10: 0.0518 recall@20: 0.0821 ] [ndcg@5: 0.0299 ndcg@10: 0.0371 ndcg@20: 0.0471 ] 
+Epoch  30 Validation set [recall@5: 0.0344 recall@10: 0.0530 recall@20: 0.0814 ] [ndcg@5: 0.0302 ndcg@10: 0.0377 ndcg@20: 0.0471 ] 
+Epoch  33 Validation set [recall@5: 0.0348 recall@10: 0.0527 recall@20: 0.0822 ] [ndcg@5: 0.0307 ndcg@10: 0.0380 ndcg@20: 0.0478 ] 
+Epoch  36 Validation set [recall@5: 0.0350 recall@10: 0.0526 recall@20: 0.0827 ] [ndcg@5: 0.0309 ndcg@10: 0.0381 ndcg@20: 0.0480 ] 
+Epoch  39 Validation set [recall@5: 0.0348 recall@10: 0.0532 recall@20: 0.0835 ] [ndcg@5: 0.0306 ndcg@10: 0.0382 ndcg@20: 0.0482 ] 
+Epoch  42 Validation set [recall@5: 0.0347 recall@10: 0.0534 recall@20: 0.0835 ] [ndcg@5: 0.0303 ndcg@10: 0.0380 ndcg@20: 0.0479 ] 
+Epoch  45 Validation set [recall@5: 0.0351 recall@10: 0.0539 recall@20: 0.0830 ] [ndcg@5: 0.0306 ndcg@10: 0.0383 ndcg@20: 0.0478 ] 
+Epoch  48 Validation set [recall@5: 0.0344 recall@10: 0.0532 recall@20: 0.0830 ] [ndcg@5: 0.0302 ndcg@10: 0.0379 ndcg@20: 0.0477 ] 
+Epoch  51 Validation set [recall@5: 0.0344 recall@10: 0.0534 recall@20: 0.0825 ] [ndcg@5: 0.0300 ndcg@10: 0.0378 ndcg@20: 0.0474 ] 
+Epoch  54 Validation set [recall@5: 0.0344 recall@10: 0.0525 recall@20: 0.0816 ] [ndcg@5: 0.0299 ndcg@10: 0.0372 ndcg@20: 0.0469 ] 
+[recall@5: 0.0348 recall@10: 0.0532 recall@20: 0.0835 ] [ndcg@5: 0.0306 ndcg@10: 0.0382 ndcg@20: 0.0482 ] 
+[recall@5: 0.0314 recall@10: 0.0515 recall@20: 0.0799 ] [ndcg@5: 0.0302 ndcg@10: 0.0389 ndcg@20: 0.0493 ] 
+Save model parameters to ./encoder/checkpoint/lightgcn_plus/lightgcn_plus-Office-2023.pth
+Best Epoch 39. Final test result: {'recall': array([0.03137255, 0.05146283, 0.07994694]), 'ndcg': array([0.03015607, 0.03890533, 0.04932843])}.
+--- STDOUT/STDERR END (exit=0) ---
+Finish: Mon Sep 29 14:53:54 CST 2025
+Status: SUCCESS
+Duration: 49s
+======== End of Command 2 ========
+
+======== Command 3 / 9 ========
+Command: python encoder/train_encoder.py --model lightgcn_gene --dataset Office --cuda 0 --emb_size 64
+Start: Mon Sep 29 14:53:54 CST 2025
+--- STDOUT/STDERR BEGIN ---
+/root/RLMRec/encoder/data_utils/data_handler_general_cf.py:86: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return t.sparse.FloatTensor(idxs, vals, shape).to(configs['device'])
+{'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': True, 'loss': 'pairwise', 'log_loss': False, 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_cf', 'name': 'Office', 'user_num': 6338, 'item_num': 4461}, 'model': {'name': 'lightgcn_gene', 'keep_rate': 0.8, 'embedding_size': 64, 'layer_num': 3, 'reg_weight': 1e-07, 'mask_ratio': 0.1, 'recon_weight': 0.1, 're_temperature': 0.2, 'amazon': {'layer_num': 2, 'reg_weight': 1e-07, 'mask_ratio': 0.15, 'recon_weight': 0.1, 're_temperature': 0.5}, 'yelp': {'layer_num': 2, 'reg_weight': 1e-07, 'mask_ratio': 0.05, 'recon_weight': 0.01, 're_temperature': 0.1}, 'steam': {'layer_num': 2, 'reg_weight': 1e-06, 'mask_ratio': 0.15, 'recon_weight': 0.1, 're_temperature': 0.5}}}
+Epoch   0 Validation set [recall@5: 0.0039 recall@10: 0.0074 recall@20: 0.0130 ] [ndcg@5: 0.0033 ndcg@10: 0.0048 ndcg@20: 0.0066 ] 
+Epoch   3 Validation set [recall@5: 0.0222 recall@10: 0.0376 recall@20: 0.0616 ] [ndcg@5: 0.0180 ndcg@10: 0.0243 ndcg@20: 0.0322 ] 
+Epoch   6 Validation set [recall@5: 0.0213 recall@10: 0.0373 recall@20: 0.0588 ] [ndcg@5: 0.0175 ndcg@10: 0.0241 ndcg@20: 0.0311 ] 
+Epoch   9 Validation set [recall@5: 0.0211 recall@10: 0.0381 recall@20: 0.0616 ] [ndcg@5: 0.0178 ndcg@10: 0.0248 ndcg@20: 0.0325 ] 
+Epoch  12 Validation set [recall@5: 0.0232 recall@10: 0.0412 recall@20: 0.0671 ] [ndcg@5: 0.0195 ndcg@10: 0.0270 ndcg@20: 0.0355 ] 
+Epoch  15 Validation set [recall@5: 0.0259 recall@10: 0.0432 recall@20: 0.0710 ] [ndcg@5: 0.0215 ndcg@10: 0.0287 ndcg@20: 0.0378 ] 
+Epoch  18 Validation set [recall@5: 0.0276 recall@10: 0.0442 recall@20: 0.0741 ] [ndcg@5: 0.0231 ndcg@10: 0.0299 ndcg@20: 0.0398 ] 
+Epoch  21 Validation set [recall@5: 0.0292 recall@10: 0.0459 recall@20: 0.0773 ] [ndcg@5: 0.0246 ndcg@10: 0.0313 ndcg@20: 0.0416 ] 
+Epoch  24 Validation set [recall@5: 0.0302 recall@10: 0.0479 recall@20: 0.0810 ] [ndcg@5: 0.0254 ndcg@10: 0.0324 ndcg@20: 0.0433 ] 
+Epoch  27 Validation set [recall@5: 0.0309 recall@10: 0.0500 recall@20: 0.0826 ] [ndcg@5: 0.0262 ndcg@10: 0.0338 ndcg@20: 0.0446 ] 
+Epoch  30 Validation set [recall@5: 0.0320 recall@10: 0.0525 recall@20: 0.0840 ] [ndcg@5: 0.0273 ndcg@10: 0.0355 ndcg@20: 0.0459 ] 
+Epoch  33 Validation set [recall@5: 0.0338 recall@10: 0.0528 recall@20: 0.0855 ] [ndcg@5: 0.0285 ndcg@10: 0.0361 ndcg@20: 0.0469 ] 
+Epoch  36 Validation set [recall@5: 0.0349 recall@10: 0.0560 recall@20: 0.0866 ] [ndcg@5: 0.0297 ndcg@10: 0.0381 ndcg@20: 0.0481 ] 
+Epoch  39 Validation set [recall@5: 0.0351 recall@10: 0.0562 recall@20: 0.0874 ] [ndcg@5: 0.0301 ndcg@10: 0.0386 ndcg@20: 0.0488 ] 
+Epoch  42 Validation set [recall@5: 0.0358 recall@10: 0.0578 recall@20: 0.0885 ] [ndcg@5: 0.0305 ndcg@10: 0.0393 ndcg@20: 0.0494 ] 
+Epoch  45 Validation set [recall@5: 0.0364 recall@10: 0.0586 recall@20: 0.0887 ] [ndcg@5: 0.0309 ndcg@10: 0.0398 ndcg@20: 0.0498 ] 
+Epoch  48 Validation set [recall@5: 0.0367 recall@10: 0.0591 recall@20: 0.0900 ] [ndcg@5: 0.0312 ndcg@10: 0.0402 ndcg@20: 0.0504 ] 
+Epoch  51 Validation set [recall@5: 0.0371 recall@10: 0.0602 recall@20: 0.0908 ] [ndcg@5: 0.0321 ndcg@10: 0.0413 ndcg@20: 0.0514 ] 
+Epoch  54 Validation set [recall@5: 0.0370 recall@10: 0.0601 recall@20: 0.0922 ] [ndcg@5: 0.0322 ndcg@10: 0.0416 ndcg@20: 0.0522 ] 
+Epoch  57 Validation set [recall@5: 0.0372 recall@10: 0.0602 recall@20: 0.0933 ] [ndcg@5: 0.0326 ndcg@10: 0.0419 ndcg@20: 0.0528 ] 
+Epoch  60 Validation set [recall@5: 0.0379 recall@10: 0.0598 recall@20: 0.0931 ] [ndcg@5: 0.0333 ndcg@10: 0.0421 ndcg@20: 0.0531 ] 
+Epoch  63 Validation set [recall@5: 0.0383 recall@10: 0.0603 recall@20: 0.0935 ] [ndcg@5: 0.0336 ndcg@10: 0.0425 ndcg@20: 0.0535 ] 
+Epoch  66 Validation set [recall@5: 0.0384 recall@10: 0.0605 recall@20: 0.0942 ] [ndcg@5: 0.0339 ndcg@10: 0.0429 ndcg@20: 0.0540 ] 
+Epoch  69 Validation set [recall@5: 0.0384 recall@10: 0.0612 recall@20: 0.0946 ] [ndcg@5: 0.0341 ndcg@10: 0.0433 ndcg@20: 0.0543 ] 
+Epoch  72 Validation set [recall@5: 0.0386 recall@10: 0.0612 recall@20: 0.0943 ] [ndcg@5: 0.0339 ndcg@10: 0.0431 ndcg@20: 0.0541 ] 
+Epoch  75 Validation set [recall@5: 0.0394 recall@10: 0.0608 recall@20: 0.0952 ] [ndcg@5: 0.0345 ndcg@10: 0.0432 ndcg@20: 0.0545 ] 
+Epoch  78 Validation set [recall@5: 0.0394 recall@10: 0.0613 recall@20: 0.0955 ] [ndcg@5: 0.0343 ndcg@10: 0.0432 ndcg@20: 0.0545 ] 
+Epoch  81 Validation set [recall@5: 0.0397 recall@10: 0.0612 recall@20: 0.0952 ] [ndcg@5: 0.0345 ndcg@10: 0.0433 ndcg@20: 0.0545 ] 
+Epoch  84 Validation set [recall@5: 0.0400 recall@10: 0.0616 recall@20: 0.0941 ] [ndcg@5: 0.0349 ndcg@10: 0.0436 ndcg@20: 0.0544 ] 
+Epoch  87 Validation set [recall@5: 0.0397 recall@10: 0.0616 recall@20: 0.0942 ] [ndcg@5: 0.0347 ndcg@10: 0.0436 ndcg@20: 0.0544 ] 
+Epoch  90 Validation set [recall@5: 0.0404 recall@10: 0.0614 recall@20: 0.0939 ] [ndcg@5: 0.0350 ndcg@10: 0.0436 ndcg@20: 0.0544 ] 
+Epoch  93 Validation set [recall@5: 0.0407 recall@10: 0.0609 recall@20: 0.0941 ] [ndcg@5: 0.0352 ndcg@10: 0.0435 ndcg@20: 0.0545 ] 
+[recall@5: 0.0394 recall@10: 0.0613 recall@20: 0.0955 ] [ndcg@5: 0.0343 ndcg@10: 0.0432 ndcg@20: 0.0545 ] 
+[recall@5: 0.0354 recall@10: 0.0574 recall@20: 0.0874 ] [ndcg@5: 0.0341 ndcg@10: 0.0436 ndcg@20: 0.0547 ] 
+Save model parameters to ./encoder/checkpoint/lightgcn_gene/lightgcn_gene-Office-2023.pth
+Best Epoch 78. Final test result: {'recall': array([0.03540392, 0.05737743, 0.08738867]), 'ndcg': array([0.03408631, 0.04358236, 0.05466864])}.
+--- STDOUT/STDERR END (exit=0) ---
+Finish: Mon Sep 29 14:54:52 CST 2025
+Status: SUCCESS
+Duration: 58s
+======== End of Command 3 ========
+
+======== Command 4 / 9 ========
+Command: python encoder/train_encoder.py --model sgl --dataset Office --cuda 0 --emb_size 64
+Start: Mon Sep 29 14:54:52 CST 2025
+--- STDOUT/STDERR BEGIN ---
+/root/RLMRec/encoder/data_utils/data_handler_general_cf.py:86: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return t.sparse.FloatTensor(idxs, vals, shape).to(configs['device'])
+{'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': False, 'loss': 'pairwise', 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_cf', 'name': 'Office', 'user_num': 6338, 'item_num': 4461}, 'model': {'name': 'sgl', 'keep_rate': 0.8, 'embedding_size': 64, 'augmentation': 'edge_drop', 'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'temperature': 0.2, 'amazon': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'temperature': 0.2}, 'yelp': {'layer_num': 3, 'reg_weight': 1e-06, 'cl_weight': 0.001, 'temperature': 0.1}, 'steam': {'layer_num': 2, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'temperature': 0.5}, 'Office': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'temperature': 0.2}}}
+Epoch   0 Validation set [recall@5: 0.0020 recall@10: 0.0048 recall@20: 0.0084 ] [ndcg@5: 0.0016 ndcg@10: 0.0027 ndcg@20: 0.0039 ] 
+Epoch   3 Validation set [recall@5: 0.0140 recall@10: 0.0211 recall@20: 0.0306 ] [ndcg@5: 0.0121 ndcg@10: 0.0151 ndcg@20: 0.0183 ] 
+Epoch   6 Validation set [recall@5: 0.0250 recall@10: 0.0373 recall@20: 0.0554 ] [ndcg@5: 0.0225 ndcg@10: 0.0275 ndcg@20: 0.0335 ] 
+Epoch   9 Validation set [recall@5: 0.0341 recall@10: 0.0500 recall@20: 0.0727 ] [ndcg@5: 0.0300 ndcg@10: 0.0365 ndcg@20: 0.0440 ] 
+Epoch  12 Validation set [recall@5: 0.0384 recall@10: 0.0560 recall@20: 0.0827 ] [ndcg@5: 0.0339 ndcg@10: 0.0409 ndcg@20: 0.0499 ] 
+Epoch  15 Validation set [recall@5: 0.0398 recall@10: 0.0596 recall@20: 0.0888 ] [ndcg@5: 0.0345 ndcg@10: 0.0426 ndcg@20: 0.0523 ] 
+Epoch  18 Validation set [recall@5: 0.0415 recall@10: 0.0618 recall@20: 0.0901 ] [ndcg@5: 0.0357 ndcg@10: 0.0439 ndcg@20: 0.0533 ] 
+Epoch  21 Validation set [recall@5: 0.0417 recall@10: 0.0622 recall@20: 0.0899 ] [ndcg@5: 0.0358 ndcg@10: 0.0441 ndcg@20: 0.0533 ] 
+Epoch  24 Validation set [recall@5: 0.0410 recall@10: 0.0615 recall@20: 0.0895 ] [ndcg@5: 0.0354 ndcg@10: 0.0438 ndcg@20: 0.0530 ] 
+Epoch  27 Validation set [recall@5: 0.0412 recall@10: 0.0607 recall@20: 0.0881 ] [ndcg@5: 0.0355 ndcg@10: 0.0434 ndcg@20: 0.0525 ] 
+Epoch  30 Validation set [recall@5: 0.0407 recall@10: 0.0603 recall@20: 0.0870 ] [ndcg@5: 0.0349 ndcg@10: 0.0428 ndcg@20: 0.0516 ] 
+Epoch  33 Validation set [recall@5: 0.0397 recall@10: 0.0597 recall@20: 0.0865 ] [ndcg@5: 0.0344 ndcg@10: 0.0424 ndcg@20: 0.0513 ] 
+[recall@5: 0.0415 recall@10: 0.0618 recall@20: 0.0901 ] [ndcg@5: 0.0357 ndcg@10: 0.0439 ndcg@20: 0.0533 ] 
+[recall@5: 0.0357 recall@10: 0.0564 recall@20: 0.0869 ] [ndcg@5: 0.0353 ndcg@10: 0.0443 ndcg@20: 0.0556 ] 
+Best Epoch 18. Final test result: {'recall': array([0.03565099, 0.05636516, 0.08692822]), 'ndcg': array([0.03528583, 0.04427867, 0.0555945 ])}.
+--- STDOUT/STDERR END (exit=0) ---
+Finish: Mon Sep 29 14:55:26 CST 2025
+Status: SUCCESS
+Duration: 34s
+======== End of Command 4 ========
+
+======== Command 5 / 9 ========
+Command: python encoder/train_encoder.py --model sgl_plus --dataset Office --cuda 0 --emb_size 64
+Start: Mon Sep 29 14:55:26 CST 2025
+--- STDOUT/STDERR BEGIN ---
+/root/RLMRec/encoder/data_utils/data_handler_general_cf.py:86: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return t.sparse.FloatTensor(idxs, vals, shape).to(configs['device'])
+{'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': True, 'loss': 'pairwise', 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_cf', 'name': 'Office', 'user_num': 6338, 'item_num': 4461}, 'model': {'name': 'sgl_plus', 'keep_rate': 0.8, 'embedding_size': 64, 'augmentation': 'edge_drop', 'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.2, 'kd_weight': 0.01, 'kd_temperature': 0.5, 'amazon': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.2, 'kd_weight': 0.01, 'kd_temperature': 0.5}, 'yelp': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.2, 'kd_weight': 0.01, 'kd_temperature': 1.0}, 'steam': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.5, 'kd_weight': 0.01, 'kd_temperature': 1.0}}}
+Epoch   0 Validation set [recall@5: 0.0024 recall@10: 0.0052 recall@20: 0.0097 ] [ndcg@5: 0.0017 ndcg@10: 0.0029 ndcg@20: 0.0044 ] 
+Epoch   3 Validation set [recall@5: 0.0148 recall@10: 0.0228 recall@20: 0.0342 ] [ndcg@5: 0.0127 ndcg@10: 0.0160 ndcg@20: 0.0197 ] 
+Epoch   6 Validation set [recall@5: 0.0227 recall@10: 0.0360 recall@20: 0.0536 ] [ndcg@5: 0.0201 ndcg@10: 0.0257 ndcg@20: 0.0315 ] 
+Epoch   9 Validation set [recall@5: 0.0311 recall@10: 0.0498 recall@20: 0.0698 ] [ndcg@5: 0.0271 ndcg@10: 0.0348 ndcg@20: 0.0415 ] 
+Epoch  12 Validation set [recall@5: 0.0354 recall@10: 0.0547 recall@20: 0.0811 ] [ndcg@5: 0.0313 ndcg@10: 0.0393 ndcg@20: 0.0481 ] 
+Epoch  15 Validation set [recall@5: 0.0392 recall@10: 0.0579 recall@20: 0.0866 ] [ndcg@5: 0.0342 ndcg@10: 0.0420 ndcg@20: 0.0515 ] 
+Epoch  18 Validation set [recall@5: 0.0393 recall@10: 0.0584 recall@20: 0.0882 ] [ndcg@5: 0.0342 ndcg@10: 0.0423 ndcg@20: 0.0522 ] 
+Epoch  21 Validation set [recall@5: 0.0392 recall@10: 0.0594 recall@20: 0.0880 ] [ndcg@5: 0.0341 ndcg@10: 0.0424 ndcg@20: 0.0519 ] 
+Epoch  24 Validation set [recall@5: 0.0401 recall@10: 0.0585 recall@20: 0.0866 ] [ndcg@5: 0.0344 ndcg@10: 0.0420 ndcg@20: 0.0513 ] 
+Epoch  27 Validation set [recall@5: 0.0389 recall@10: 0.0573 recall@20: 0.0870 ] [ndcg@5: 0.0334 ndcg@10: 0.0410 ndcg@20: 0.0508 ] 
+Epoch  30 Validation set [recall@5: 0.0380 recall@10: 0.0569 recall@20: 0.0862 ] [ndcg@5: 0.0328 ndcg@10: 0.0404 ndcg@20: 0.0501 ] 
+Epoch  33 Validation set [recall@5: 0.0377 recall@10: 0.0563 recall@20: 0.0844 ] [ndcg@5: 0.0324 ndcg@10: 0.0400 ndcg@20: 0.0493 ] 
+[recall@5: 0.0393 recall@10: 0.0584 recall@20: 0.0882 ] [ndcg@5: 0.0342 ndcg@10: 0.0423 ndcg@20: 0.0522 ] 
+[recall@5: 0.0346 recall@10: 0.0555 recall@20: 0.0838 ] [ndcg@5: 0.0345 ndcg@10: 0.0435 ndcg@20: 0.0539 ] 
+Save model parameters to ./encoder/checkpoint/sgl_plus/sgl_plus-Office-2023.pth
+Best Epoch 18. Final test result: {'recall': array([0.03460144, 0.05551874, 0.08378521]), 'ndcg': array([0.03454142, 0.04353584, 0.05386615])}.
+--- STDOUT/STDERR END (exit=0) ---
+Finish: Mon Sep 29 14:56:07 CST 2025
+Status: SUCCESS
+Duration: 41s
+======== End of Command 5 ========
+
+======== Command 6 / 9 ========
+Command: python encoder/train_encoder.py --model sgl_gene --dataset Office --cuda 0 --emb_size 64
+Start: Mon Sep 29 14:56:07 CST 2025
+--- STDOUT/STDERR BEGIN ---
+/root/RLMRec/encoder/data_utils/data_handler_general_cf.py:86: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return t.sparse.FloatTensor(idxs, vals, shape).to(configs['device'])
+{'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': True, 'loss': 'pairwise', 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_cf', 'name': 'Office', 'user_num': 6338, 'item_num': 4461}, 'model': {'name': 'sgl_gene', 'keep_rate': 0.8, 'embedding_size': 64, 'augmentation': 'edge_drop', 'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.2, 'mask_ratio': 0.2, 'recon_weight': 0.1, 're_temperature': 0.2, 'amazon': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.2, 'mask_ratio': 0.2, 'recon_weight': 0.1, 're_temperature': 0.2}, 'yelp': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.2, 'mask_ratio': 0.15, 'recon_weight': 0.1, 're_temperature': 0.2}, 'steam': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.5, 'mask_ratio': 0.1, 'recon_weight': 0.1, 're_temperature': 0.2}, 'Office': {'layer_num': 3, 'temperature': 0.5, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.2, 'mask_ratio': 0.2, 'recon_weight': 0.1, 're_temperature': 0.2}}}
+Epoch   0 Validation set [recall@5: 0.0043 recall@10: 0.0078 recall@20: 0.0143 ] [ndcg@5: 0.0038 ndcg@10: 0.0052 ndcg@20: 0.0074 ] 
+Epoch   3 Validation set [recall@5: 0.0193 recall@10: 0.0292 recall@20: 0.0439 ] [ndcg@5: 0.0169 ndcg@10: 0.0210 ndcg@20: 0.0259 ] 
+Epoch   6 Validation set [recall@5: 0.0269 recall@10: 0.0400 recall@20: 0.0581 ] [ndcg@5: 0.0236 ndcg@10: 0.0290 ndcg@20: 0.0349 ] 
+Epoch   9 Validation set [recall@5: 0.0317 recall@10: 0.0455 recall@20: 0.0653 ] [ndcg@5: 0.0281 ndcg@10: 0.0338 ndcg@20: 0.0403 ] 
+Epoch  12 Validation set [recall@5: 0.0357 recall@10: 0.0518 recall@20: 0.0753 ] [ndcg@5: 0.0320 ndcg@10: 0.0385 ndcg@20: 0.0462 ] 
+Epoch  15 Validation set [recall@5: 0.0366 recall@10: 0.0566 recall@20: 0.0812 ] [ndcg@5: 0.0325 ndcg@10: 0.0407 ndcg@20: 0.0488 ] 
+Epoch  18 Validation set [recall@5: 0.0391 recall@10: 0.0583 recall@20: 0.0858 ] [ndcg@5: 0.0344 ndcg@10: 0.0421 ndcg@20: 0.0512 ] 
+Epoch  21 Validation set [recall@5: 0.0394 recall@10: 0.0601 recall@20: 0.0887 ] [ndcg@5: 0.0350 ndcg@10: 0.0434 ndcg@20: 0.0528 ] 
+Epoch  24 Validation set [recall@5: 0.0405 recall@10: 0.0627 recall@20: 0.0909 ] [ndcg@5: 0.0354 ndcg@10: 0.0444 ndcg@20: 0.0537 ] 
+Epoch  27 Validation set [recall@5: 0.0421 recall@10: 0.0635 recall@20: 0.0929 ] [ndcg@5: 0.0362 ndcg@10: 0.0448 ndcg@20: 0.0545 ] 
+Epoch  30 Validation set [recall@5: 0.0424 recall@10: 0.0635 recall@20: 0.0939 ] [ndcg@5: 0.0366 ndcg@10: 0.0451 ndcg@20: 0.0553 ] 
+Epoch  33 Validation set [recall@5: 0.0433 recall@10: 0.0647 recall@20: 0.0965 ] [ndcg@5: 0.0372 ndcg@10: 0.0458 ndcg@20: 0.0563 ] 
+Epoch  36 Validation set [recall@5: 0.0431 recall@10: 0.0649 recall@20: 0.0964 ] [ndcg@5: 0.0368 ndcg@10: 0.0455 ndcg@20: 0.0560 ] 
+Epoch  39 Validation set [recall@5: 0.0430 recall@10: 0.0658 recall@20: 0.0963 ] [ndcg@5: 0.0368 ndcg@10: 0.0459 ndcg@20: 0.0560 ] 
+Epoch  42 Validation set [recall@5: 0.0423 recall@10: 0.0650 recall@20: 0.0970 ] [ndcg@5: 0.0366 ndcg@10: 0.0458 ndcg@20: 0.0563 ] 
+Epoch  45 Validation set [recall@5: 0.0426 recall@10: 0.0650 recall@20: 0.0964 ] [ndcg@5: 0.0366 ndcg@10: 0.0456 ndcg@20: 0.0560 ] 
+Epoch  48 Validation set [recall@5: 0.0426 recall@10: 0.0656 recall@20: 0.0956 ] [ndcg@5: 0.0368 ndcg@10: 0.0460 ndcg@20: 0.0559 ] 
+Epoch  51 Validation set [recall@5: 0.0428 recall@10: 0.0655 recall@20: 0.0945 ] [ndcg@5: 0.0368 ndcg@10: 0.0459 ndcg@20: 0.0555 ] 
+Epoch  54 Validation set [recall@5: 0.0435 recall@10: 0.0651 recall@20: 0.0948 ] [ndcg@5: 0.0370 ndcg@10: 0.0457 ndcg@20: 0.0555 ] 
+Epoch  57 Validation set [recall@5: 0.0425 recall@10: 0.0645 recall@20: 0.0941 ] [ndcg@5: 0.0365 ndcg@10: 0.0453 ndcg@20: 0.0552 ] 
+[recall@5: 0.0423 recall@10: 0.0650 recall@20: 0.0970 ] [ndcg@5: 0.0366 ndcg@10: 0.0458 ndcg@20: 0.0563 ] 
+[recall@5: 0.0374 recall@10: 0.0598 recall@20: 0.0895 ] [ndcg@5: 0.0371 ndcg@10: 0.0469 ndcg@20: 0.0579 ] 
+Save model parameters to ./encoder/checkpoint/sgl_gene/sgl_gene-Office-2023.pth
+Best Epoch 42. Final test result: {'recall': array([0.0373725 , 0.05978054, 0.08947228]), 'ndcg': array([0.03707555, 0.04686054, 0.05789917])}.
+--- STDOUT/STDERR END (exit=0) ---
+Finish: Mon Sep 29 14:57:12 CST 2025
+Status: SUCCESS
+Duration: 65s
+======== End of Command 6 ========
+
+======== Command 7 / 9 ========
+Command: python encoder/train_encoder.py --model simgcl --dataset Office --cuda 0 --emb_size 64
+Start: Mon Sep 29 14:57:12 CST 2025
+--- STDOUT/STDERR BEGIN ---
+/root/RLMRec/encoder/data_utils/data_handler_general_cf.py:86: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return t.sparse.FloatTensor(idxs, vals, shape).to(configs['device'])
+{'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': False, 'loss': 'pairwise', 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_cf', 'name': 'Office', 'user_num': 6338, 'item_num': 4461}, 'model': {'name': 'simgcl', 'keep_rate': 1.0, 'embedding_size': 64, 'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'temperature': 0.2, 'eps': 0.9, 'amazon': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'temperature': 0.2, 'eps': 0.9}, 'yelp': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'temperature': 0.2, 'eps': 0.9}, 'steam': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'temperature': 0.5, 'eps': 0.2}}}
+Epoch   0 Validation set [recall@5: 0.0112 recall@10: 0.0173 recall@20: 0.0255 ] [ndcg@5: 0.0097 ndcg@10: 0.0121 ndcg@20: 0.0148 ] 
+Epoch   3 Validation set [recall@5: 0.0325 recall@10: 0.0494 recall@20: 0.0744 ] [ndcg@5: 0.0287 ndcg@10: 0.0357 ndcg@20: 0.0439 ] 
+Epoch   6 Validation set [recall@5: 0.0353 recall@10: 0.0538 recall@20: 0.0842 ] [ndcg@5: 0.0313 ndcg@10: 0.0388 ndcg@20: 0.0488 ] 
+Epoch   9 Validation set [recall@5: 0.0365 recall@10: 0.0563 recall@20: 0.0885 ] [ndcg@5: 0.0322 ndcg@10: 0.0402 ndcg@20: 0.0508 ] 
+Epoch  12 Validation set [recall@5: 0.0382 recall@10: 0.0593 recall@20: 0.0894 ] [ndcg@5: 0.0333 ndcg@10: 0.0419 ndcg@20: 0.0519 ] 
+Epoch  15 Validation set [recall@5: 0.0393 recall@10: 0.0606 recall@20: 0.0916 ] [ndcg@5: 0.0339 ndcg@10: 0.0427 ndcg@20: 0.0529 ] 
+Epoch  18 Validation set [recall@5: 0.0390 recall@10: 0.0605 recall@20: 0.0906 ] [ndcg@5: 0.0343 ndcg@10: 0.0430 ndcg@20: 0.0531 ] 
+Epoch  21 Validation set [recall@5: 0.0397 recall@10: 0.0602 recall@20: 0.0906 ] [ndcg@5: 0.0345 ndcg@10: 0.0429 ndcg@20: 0.0531 ] 
+Epoch  24 Validation set [recall@5: 0.0389 recall@10: 0.0599 recall@20: 0.0902 ] [ndcg@5: 0.0341 ndcg@10: 0.0427 ndcg@20: 0.0527 ] 
+Epoch  27 Validation set [recall@5: 0.0391 recall@10: 0.0588 recall@20: 0.0889 ] [ndcg@5: 0.0340 ndcg@10: 0.0420 ndcg@20: 0.0520 ] 
+Epoch  30 Validation set [recall@5: 0.0389 recall@10: 0.0592 recall@20: 0.0890 ] [ndcg@5: 0.0339 ndcg@10: 0.0422 ndcg@20: 0.0520 ] 
+[recall@5: 0.0393 recall@10: 0.0606 recall@20: 0.0916 ] [ndcg@5: 0.0339 ndcg@10: 0.0427 ndcg@20: 0.0529 ] 
+[recall@5: 0.0354 recall@10: 0.0564 recall@20: 0.0873 ] [ndcg@5: 0.0347 ndcg@10: 0.0438 ndcg@20: 0.0552 ] 
+Best Epoch 15. Final test result: {'recall': array([0.03542543, 0.05635536, 0.08728204]), 'ndcg': array([0.0346667 , 0.04384372, 0.05519133])}.
+--- STDOUT/STDERR END (exit=0) ---
+Finish: Mon Sep 29 14:57:47 CST 2025
+Status: SUCCESS
+Duration: 35s
+======== End of Command 7 ========
+
+======== Command 8 / 9 ========
+Command: python encoder/train_encoder.py --model simgcl_plus --dataset Office --cuda 0 --emb_size 64
+Start: Mon Sep 29 14:57:47 CST 2025
+--- STDOUT/STDERR BEGIN ---
+/root/RLMRec/encoder/data_utils/data_handler_general_cf.py:86: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return t.sparse.FloatTensor(idxs, vals, shape).to(configs['device'])
+{'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': True, 'loss': 'pairwise', 'test_step': 1, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_cf', 'name': 'Office', 'user_num': 6338, 'item_num': 4461}, 'model': {'name': 'simgcl_plus', 'keep_rate': 1.0, 'embedding_size': 64, 'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.2, 'kd_weight': 0.01, 'kd_temperature': 0.2, 'eps': 0.9, 'amazon': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.2, 'kd_weight': 0.01, 'kd_temperature': 0.2, 'eps': 0.9}, 'yelp': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.2, 'kd_weight': 0.01, 'kd_temperature': 0.1, 'eps': 0.9}, 'steam': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.5, 'kd_weight': 0.01, 'kd_temperature': 0.2, 'eps': 0.2}}}
+Epoch   0 Validation set [recall@5: 0.0077 recall@10: 0.0119 recall@20: 0.0198 ] [ndcg@5: 0.0068 ndcg@10: 0.0085 ndcg@20: 0.0111 ] 
+Epoch   1 Validation set [recall@5: 0.0143 recall@10: 0.0221 recall@20: 0.0340 ] [ndcg@5: 0.0129 ndcg@10: 0.0161 ndcg@20: 0.0200 ] 
+Epoch   2 Validation set [recall@5: 0.0186 recall@10: 0.0290 recall@20: 0.0442 ] [ndcg@5: 0.0159 ndcg@10: 0.0201 ndcg@20: 0.0252 ] 
+Epoch   3 Validation set [recall@5: 0.0230 recall@10: 0.0347 recall@20: 0.0529 ] [ndcg@5: 0.0197 ndcg@10: 0.0245 ndcg@20: 0.0305 ] 
+Epoch   4 Validation set [recall@5: 0.0260 recall@10: 0.0403 recall@20: 0.0613 ] [ndcg@5: 0.0223 ndcg@10: 0.0282 ndcg@20: 0.0352 ] 
+Epoch   5 Validation set [recall@5: 0.0279 recall@10: 0.0454 recall@20: 0.0680 ] [ndcg@5: 0.0241 ndcg@10: 0.0314 ndcg@20: 0.0389 ] 
+Epoch   6 Validation set [recall@5: 0.0304 recall@10: 0.0493 recall@20: 0.0722 ] [ndcg@5: 0.0264 ndcg@10: 0.0342 ndcg@20: 0.0419 ] 
+Epoch   7 Validation set [recall@5: 0.0328 recall@10: 0.0514 recall@20: 0.0780 ] [ndcg@5: 0.0287 ndcg@10: 0.0364 ndcg@20: 0.0451 ] 
+Epoch   8 Validation set [recall@5: 0.0336 recall@10: 0.0531 recall@20: 0.0804 ] [ndcg@5: 0.0296 ndcg@10: 0.0377 ndcg@20: 0.0467 ] 
+Epoch   9 Validation set [recall@5: 0.0351 recall@10: 0.0540 recall@20: 0.0822 ] [ndcg@5: 0.0309 ndcg@10: 0.0388 ndcg@20: 0.0481 ] 
+Epoch  10 Validation set [recall@5: 0.0355 recall@10: 0.0546 recall@20: 0.0835 ] [ndcg@5: 0.0313 ndcg@10: 0.0392 ndcg@20: 0.0488 ] 
+Epoch  11 Validation set [recall@5: 0.0361 recall@10: 0.0559 recall@20: 0.0849 ] [ndcg@5: 0.0320 ndcg@10: 0.0402 ndcg@20: 0.0498 ] 
+Epoch  12 Validation set [recall@5: 0.0364 recall@10: 0.0566 recall@20: 0.0854 ] [ndcg@5: 0.0323 ndcg@10: 0.0405 ndcg@20: 0.0501 ] 
+Epoch  13 Validation set [recall@5: 0.0364 recall@10: 0.0570 recall@20: 0.0864 ] [ndcg@5: 0.0323 ndcg@10: 0.0409 ndcg@20: 0.0506 ] 
+Epoch  14 Validation set [recall@5: 0.0374 recall@10: 0.0578 recall@20: 0.0860 ] [ndcg@5: 0.0330 ndcg@10: 0.0413 ndcg@20: 0.0507 ] 
+Epoch  15 Validation set [recall@5: 0.0373 recall@10: 0.0583 recall@20: 0.0858 ] [ndcg@5: 0.0326 ndcg@10: 0.0412 ndcg@20: 0.0503 ] 
+Epoch  16 Validation set [recall@5: 0.0368 recall@10: 0.0580 recall@20: 0.0860 ] [ndcg@5: 0.0324 ndcg@10: 0.0411 ndcg@20: 0.0504 ] 
+Epoch  17 Validation set [recall@5: 0.0369 recall@10: 0.0581 recall@20: 0.0855 ] [ndcg@5: 0.0323 ndcg@10: 0.0411 ndcg@20: 0.0502 ] 
+Epoch  18 Validation set [recall@5: 0.0370 recall@10: 0.0583 recall@20: 0.0863 ] [ndcg@5: 0.0324 ndcg@10: 0.0412 ndcg@20: 0.0505 ] 
+[recall@5: 0.0364 recall@10: 0.0570 recall@20: 0.0864 ] [ndcg@5: 0.0323 ndcg@10: 0.0409 ndcg@20: 0.0506 ] 
+[recall@5: 0.0329 recall@10: 0.0529 recall@20: 0.0821 ] [ndcg@5: 0.0318 ndcg@10: 0.0404 ndcg@20: 0.0512 ] 
+Save model parameters to ./encoder/checkpoint/simgcl_plus/simgcl_plus-Office-2023.pth
+Best Epoch 13. Final test result: {'recall': array([0.03294171, 0.05285557, 0.08206488]), 'ndcg': array([0.03180351, 0.04040533, 0.05120766])}.
+--- STDOUT/STDERR END (exit=0) ---
+Finish: Mon Sep 29 14:58:19 CST 2025
+Status: SUCCESS
+Duration: 32s
+======== End of Command 8 ========
+
+======== Command 9 / 9 ========
+Command: python encoder/train_encoder.py --model simgcl_gene --dataset Office --cuda 0 --emb_size 64
+Start: Mon Sep 29 14:58:19 CST 2025
+--- STDOUT/STDERR BEGIN ---
+/root/RLMRec/encoder/data_utils/data_handler_general_cf.py:86: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return t.sparse.FloatTensor(idxs, vals, shape).to(configs['device'])
+{'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': True, 'loss': 'pairwise', 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_cf', 'name': 'Office', 'user_num': 6338, 'item_num': 4461}, 'model': {'name': 'simgcl_gene', 'keep_rate': 1.0, 'embedding_size': 64, 'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.2, 'mask_ratio': 0.05, 'recon_weight': 0.1, 're_temperature': 0.2, 'eps': 0.9, 'amazon': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.2, 'mask_ratio': 0.05, 'recon_weight': 0.1, 're_temperature': 0.2, 'eps': 0.9}, 'yelp': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.2, 'mask_ratio': 0.01, 'recon_weight': 0.01, 're_temperature': 0.05, 'eps': 0.9}, 'steam': {'layer_num': 3, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'cl_temperature': 0.5, 'mask_ratio': 0.05, 'recon_weight': 0.01, 're_temperature': 0.1, 'eps': 0.2}}}
+Epoch   0 Validation set [recall@5: 0.0091 recall@10: 0.0152 recall@20: 0.0237 ] [ndcg@5: 0.0079 ndcg@10: 0.0104 ndcg@20: 0.0133 ] 
+Epoch   3 Validation set [recall@5: 0.0328 recall@10: 0.0491 recall@20: 0.0725 ] [ndcg@5: 0.0287 ndcg@10: 0.0354 ndcg@20: 0.0432 ] 
+Epoch   6 Validation set [recall@5: 0.0357 recall@10: 0.0538 recall@20: 0.0841 ] [ndcg@5: 0.0315 ndcg@10: 0.0387 ndcg@20: 0.0486 ] 
+Epoch   9 Validation set [recall@5: 0.0358 recall@10: 0.0559 recall@20: 0.0871 ] [ndcg@5: 0.0317 ndcg@10: 0.0398 ndcg@20: 0.0500 ] 
+Epoch  12 Validation set [recall@5: 0.0372 recall@10: 0.0583 recall@20: 0.0895 ] [ndcg@5: 0.0327 ndcg@10: 0.0413 ndcg@20: 0.0516 ] 
+Epoch  15 Validation set [recall@5: 0.0389 recall@10: 0.0600 recall@20: 0.0939 ] [ndcg@5: 0.0337 ndcg@10: 0.0422 ndcg@20: 0.0536 ] 
+Epoch  18 Validation set [recall@5: 0.0396 recall@10: 0.0614 recall@20: 0.0933 ] [ndcg@5: 0.0342 ndcg@10: 0.0430 ndcg@20: 0.0537 ] 
+Epoch  21 Validation set [recall@5: 0.0393 recall@10: 0.0612 recall@20: 0.0934 ] [ndcg@5: 0.0341 ndcg@10: 0.0430 ndcg@20: 0.0537 ] 
+Epoch  24 Validation set [recall@5: 0.0396 recall@10: 0.0615 recall@20: 0.0929 ] [ndcg@5: 0.0345 ndcg@10: 0.0434 ndcg@20: 0.0538 ] 
+Epoch  27 Validation set [recall@5: 0.0394 recall@10: 0.0613 recall@20: 0.0914 ] [ndcg@5: 0.0345 ndcg@10: 0.0433 ndcg@20: 0.0533 ] 
+Epoch  30 Validation set [recall@5: 0.0394 recall@10: 0.0605 recall@20: 0.0916 ] [ndcg@5: 0.0344 ndcg@10: 0.0428 ndcg@20: 0.0531 ] 
+[recall@5: 0.0389 recall@10: 0.0600 recall@20: 0.0939 ] [ndcg@5: 0.0337 ndcg@10: 0.0422 ndcg@20: 0.0536 ] 
+[recall@5: 0.0349 recall@10: 0.0555 recall@20: 0.0869 ] [ndcg@5: 0.0337 ndcg@10: 0.0428 ndcg@20: 0.0543 ] 
+Save model parameters to ./encoder/checkpoint/simgcl_gene/simgcl_gene-Office-2023.pth
+Best Epoch 15. Final test result: {'recall': array([0.03491023, 0.05548762, 0.0868566 ]), 'ndcg': array([0.0336519 , 0.04275371, 0.05434276])}.
+--- STDOUT/STDERR END (exit=0) ---
+Finish: Mon Sep 29 14:59:00 CST 2025
+Status: SUCCESS
+Duration: 41s
+======== End of Command 9 ========
+
+======================================
+All commands finished: Mon Sep 29 14:59:00 CST 2025
+Success: 9  Fail: 0  Total: 9
+Total elapsed: 403s

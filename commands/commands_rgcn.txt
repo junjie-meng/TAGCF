@@ -1,0 +1,9 @@
+python encoder/train_encoder.py --model lightgcn_rgcn --dataset amazon --cuda 0  
+python encoder/train_encoder.py --model sgl_rgcn --dataset amazon --cuda 0  
+python encoder/train_encoder.py --model simgcl_rgcn --dataset amazon --cuda 0  
+python encoder/train_encoder.py --model lightgcn_rgcn --dataset yelp --cuda 0  
+python encoder/train_encoder.py --model sgl_rgcn --dataset yelp --cuda 0  
+python encoder/train_encoder.py --model simgcl_rgcn --dataset yelp --cuda 0  
+python encoder/train_encoder.py --model lightgcn_rgcn --dataset Office --cuda 0  
+python encoder/train_encoder.py --model sgl_rgcn --dataset Office --cuda 0  
+python encoder/train_encoder.py --model simgcl_rgcn --dataset Office --cuda 0  

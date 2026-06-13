@@ -1,0 +1,14 @@
+2025-09-28 13:35:30,120 - {'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': True, 'loss': 'pairwise', 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_agcf', 'name': 'amazon', 'mat_type': 'uai', 'pre_norm': True, 'user_num': 11000, 'item_num': 9332, 'user_item_num': 20332, 'attr_num': 1978}, 'model': {'name': 'simgcl_rgcn', 'label': 'ori', 'keep_rate': 1, 'embedding_size': 64, 'use_unify_layer_num': True, 'layer_num': 3, 'reg_weight': 1e-07, 'cl_weight': 0.1, 'amazon': {'keep_rate': 0.9, 'layer_num': 3, 'reg_weight': 1e-07, 'eps': 0.1, 'temperature': 0.2}, 'yelp': {'layer_num': 3, 'reg_weight': 1e-06, 'eps': 0.9, 'temperature': 0.2}, 'steam': {'layer_num': 2, 'reg_weight': 1e-06, 'eps': 0.2, 'temperature': 0.5}, 'Office': {'layer_num': 3, 'reg_weight': 1e-05, 'eps': 0.9, 'temperature': 0.2, 'cl_weight': 0.01}}}
+2025-09-28 13:35:31,715 - The size of tensor a (64) must match the size of tensor b (22310) at non-singleton dimension 1
+Traceback (most recent call last):
+  File "/home1/workspace/mengjunjie/RLMRec/encoder/trainer/utils.py", line 15, in wrapper
+    return func(*args, **kwargs)
+  File "/home1/workspace/mengjunjie/RLMRec/encoder/trainer/trainer.py", line 79, in train
+    self.train_epoch(model, epoch_idx)
+  File "/home1/workspace/mengjunjie/RLMRec/encoder/trainer/trainer.py", line 54, in train_epoch
+    loss, loss_dict = model.cal_loss(batch_data)
+  File "/home1/workspace/mengjunjie/RLMRec/encoder/models/general_cf/simgcl_rgcn.py", line 147, in cal_loss
+    user_embeds, item_embeds = self.forward(self.adjs, self.keep_rate, perturb=False)
+  File "/home1/workspace/mengjunjie/RLMRec/encoder/models/general_cf/simgcl_rgcn.py", line 137, in forward
+    next_layer_embeds += gcn_embeds[j] * rel_weights_list[:, j]
+RuntimeError: The size of tensor a (64) must match the size of tensor b (22310) at non-singleton dimension 1

@@ -1,0 +1,44 @@
+2025-09-29 19:11:42,751 - {'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': True, 'loss': 'pairwise', 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_agcf', 'name': 'amazon', 'mat_type': 'uai', 'pre_norm': True, 'user_num': 11000, 'item_num': 9332, 'user_item_num': 20332, 'attr_num': 1978}, 'model': {'name': 'lightgcn_rgcn', 'label': 'ori', 'keep_rate': 0.9, 'embedding_size': 64, 'use_unify_layer_num': True, 'layer_num': 3, 'reg_weight': 1e-07, 'amazon': {'keep_rate': 0.9, 'layer_num': 3, 'reg_weight': 1e-07, 'eps': 0.1}, 'yelp': {'keep_rate': 0.8, 'layer_num': 3, 'reg_weight': 1e-07, 'eps': 0.1}, 'steam': {'keep_rate': 0.8, 'layer_num': 3, 'reg_weight': 1e-07, 'eps': 0.2}, 'Office': {'keep_rate': 0.9, 'layer_num': 3, 'reg_weight': 1e-06, 'eps': 0.1}}}
+2025-09-29 19:11:43,072 - module 'torch.utils._pytree' has no attribute 'register_pytree_node'
+Traceback (most recent call last):
+  File "/root/RLMRec/encoder/trainer/utils.py", line 15, in wrapper
+    return func(*args, **kwargs)
+  File "/root/RLMRec/encoder/trainer/trainer.py", line 81, in train
+    self.create_optimizer(model)
+  File "/root/RLMRec/encoder/trainer/trainer.py", line 38, in create_optimizer
+    self.optimizer = optim.Adam(model.parameters(), lr=optim_config['lr'], weight_decay=optim_config['weight_decay'])
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/optim/adam.py", line 45, in __init__
+    super().__init__(params, defaults)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/optim/optimizer.py", line 266, in __init__
+    self.add_param_group(cast(dict, param_group))
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/_compile.py", line 22, in inner
+    import torch._dynamo
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/_dynamo/__init__.py", line 2, in <module>
+    from . import allowed_functions, convert_frame, eval_frame, resume_execution
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/_dynamo/allowed_functions.py", line 26, in <module>
+    from . import config
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/_dynamo/config.py", line 49, in <module>
+    torch.onnx.is_in_onnx_export: False,
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/__init__.py", line 1831, in __getattr__
+    return importlib.import_module(f".{name}", __name__)
+  File "/root/miniconda3/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/onnx/__init__.py", line 46, in <module>
+    from ._internal.exporter import (  # usort:skip. needs to be last to avoid circular import
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/onnx/_internal/exporter.py", line 42, in <module>
+    from torch.onnx._internal.fx import (
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/onnx/_internal/fx/__init__.py", line 1, in <module>
+    from .patcher import ONNXTorchPatcher
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/onnx/_internal/fx/patcher.py", line 11, in <module>
+    import transformers  # type: ignore[import]
+  File "/root/miniconda3/lib/python3.10/site-packages/transformers/__init__.py", line 27, in <module>
+    from . import dependency_versions_check
+  File "/root/miniconda3/lib/python3.10/site-packages/transformers/dependency_versions_check.py", line 16, in <module>
+    from .utils.versions import require_version, require_version_core
+  File "/root/miniconda3/lib/python3.10/site-packages/transformers/utils/__init__.py", line 24, in <module>
+    from .auto_docstring import (
+  File "/root/miniconda3/lib/python3.10/site-packages/transformers/utils/auto_docstring.py", line 30, in <module>
+    from .generic import ModelOutput
+  File "/root/miniconda3/lib/python3.10/site-packages/transformers/utils/generic.py", line 486, in <module>
+    _torch_pytree.register_pytree_node(
+AttributeError: module 'torch.utils._pytree' has no attribute 'register_pytree_node'

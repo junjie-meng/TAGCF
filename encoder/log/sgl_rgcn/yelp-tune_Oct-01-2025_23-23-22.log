@@ -1,0 +1,6 @@
+2025-10-01 23:23:33,804 - Epoch   0 Validation set [recall@5: 0.0008 recall@10: 0.0014 recall@20: 0.0027 ] [ndcg@5: 0.0008 ndcg@10: 0.0011 ndcg@20: 0.0015 ] 
+2025-10-01 23:24:00,670 - Epoch   3 Validation set [recall@5: 0.0022 recall@10: 0.0034 recall@20: 0.0055 ] [ndcg@5: 0.0030 ndcg@10: 0.0033 ndcg@20: 0.0039 ] 
+2025-10-01 23:24:30,808 - Epoch   6 Validation set [recall@5: 0.0088 recall@10: 0.0133 recall@20: 0.0198 ] [ndcg@5: 0.0111 ndcg@10: 0.0121 ndcg@20: 0.0142 ] 
+2025-10-01 23:24:59,513 - Epoch   9 Validation set [recall@5: 0.0236 recall@10: 0.0393 recall@20: 0.0631 ] [ndcg@5: 0.0295 ndcg@10: 0.0336 ndcg@20: 0.0414 ] 
+2025-10-01 23:25:29,366 - Epoch  12 Validation set [recall@5: 0.0335 recall@10: 0.0584 recall@20: 0.0957 ] [ndcg@5: 0.0413 ndcg@10: 0.0485 ndcg@20: 0.0607 ] 
+2025-10-01 23:25:57,588 - Epoch  15 Validation set [recall@5: 0.0402 recall@10: 0.0679 recall@20: 0.1103 ] [ndcg@5: 0.0474 ndcg@10: 0.0556 ndcg@20: 0.0695 ] 

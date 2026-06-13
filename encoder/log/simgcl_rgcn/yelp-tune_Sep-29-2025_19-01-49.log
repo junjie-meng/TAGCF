@@ -1,0 +1,1 @@
+2025-09-29 19:01:57,514 - Epoch   0 Validation set [recall@5: 0.0224 recall@10: 0.0385 recall@20: 0.0631 ] [ndcg@5: 0.0282 ndcg@10: 0.0329 ndcg@20: 0.0411 ] 

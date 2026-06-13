@@ -1,0 +1,3 @@
+2025-10-01 16:55:54,660 - Epoch   0 Validation set [recall@5: 0.0013 recall@10: 0.0025 recall@20: 0.0049 ] [ndcg@5: 0.0010 ndcg@10: 0.0015 ndcg@20: 0.0023 ] 
+2025-10-01 16:56:03,889 - Epoch   3 Validation set [recall@5: 0.0015 recall@10: 0.0028 recall@20: 0.0051 ] [ndcg@5: 0.0014 ndcg@10: 0.0019 ndcg@20: 0.0027 ] 
+2025-10-01 16:56:13,036 - Epoch   6 Validation set [recall@5: 0.0019 recall@10: 0.0038 recall@20: 0.0065 ] [ndcg@5: 0.0016 ndcg@10: 0.0024 ndcg@20: 0.0033 ] 

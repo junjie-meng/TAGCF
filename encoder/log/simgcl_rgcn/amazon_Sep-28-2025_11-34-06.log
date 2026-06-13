@@ -1,0 +1,17 @@
+2025-09-28 11:34:06,865 - {'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': True, 'loss': 'pairwise', 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_agcf', 'name': 'amazon', 'mat_type': 'uai', 'pre_norm': True, 'user_num': 11000, 'item_num': 9332, 'user_item_num': 20332, 'attr_num': 1978}, 'model': {'name': 'simgcl_rgcn', 'label': 'ori', 'keep_rate': 1, 'embedding_size': 64, 'use_unify_layer_num': True, 'layer_num': 3, 'reg_weight': 1e-07, 'cl_weight': 0.1, 'amazon': {'keep_rate': 0.9, 'layer_num': 3, 'reg_weight': 1e-07, 'eps': 0.1, 'temperature': 0.2}, 'yelp': {'layer_num': 3, 'reg_weight': 1e-06, 'eps': 0.1, 'temperature': 0.2}, 'steam': {'layer_num': 2, 'reg_weight': 1e-06, 'eps': 0.2, 'temperature': 0.5}, 'Office': {'layer_num': 3, 'reg_weight': 1e-05, 'eps': 0.9, 'temperature': 0.2, 'cl_weight': 0.01}}}
+2025-09-28 11:34:13,948 - Epoch   0 Validation set [recall@5: 0.0147 recall@10: 0.0212 recall@20: 0.0300 ] [ndcg@5: 0.0148 ndcg@10: 0.0169 ndcg@20: 0.0198 ] 
+2025-09-28 11:34:28,689 - Epoch   3 Validation set [recall@5: 0.0528 recall@10: 0.0805 recall@20: 0.1168 ] [ndcg@5: 0.0528 ndcg@10: 0.0622 ndcg@20: 0.0739 ] 
+2025-09-28 11:34:43,384 - Epoch   6 Validation set [recall@5: 0.0622 recall@10: 0.0924 recall@20: 0.1348 ] [ndcg@5: 0.0606 ndcg@10: 0.0710 ndcg@20: 0.0849 ] 
+2025-09-28 11:34:57,516 - Epoch   9 Validation set [recall@5: 0.0713 recall@10: 0.1082 recall@20: 0.1555 ] [ndcg@5: 0.0707 ndcg@10: 0.0834 ndcg@20: 0.0987 ] 
+2025-09-28 11:35:11,959 - Epoch  12 Validation set [recall@5: 0.0753 recall@10: 0.1147 recall@20: 0.1654 ] [ndcg@5: 0.0750 ndcg@10: 0.0882 ndcg@20: 0.1047 ] 
+2025-09-28 11:35:26,767 - Epoch  15 Validation set [recall@5: 0.0789 recall@10: 0.1187 recall@20: 0.1697 ] [ndcg@5: 0.0786 ndcg@10: 0.0920 ndcg@20: 0.1086 ] 
+2025-09-28 11:35:39,433 - Epoch  18 Validation set [recall@5: 0.0809 recall@10: 0.1196 recall@20: 0.1727 ] [ndcg@5: 0.0803 ndcg@10: 0.0932 ndcg@20: 0.1104 ] 
+2025-09-28 11:35:52,076 - Epoch  21 Validation set [recall@5: 0.0805 recall@10: 0.1208 recall@20: 0.1718 ] [ndcg@5: 0.0807 ndcg@10: 0.0941 ndcg@20: 0.1106 ] 
+2025-09-28 11:36:04,752 - Epoch  24 Validation set [recall@5: 0.0813 recall@10: 0.1195 recall@20: 0.1692 ] [ndcg@5: 0.0805 ndcg@10: 0.0932 ndcg@20: 0.1092 ] 
+2025-09-28 11:36:17,037 - Epoch  27 Validation set [recall@5: 0.0826 recall@10: 0.1211 recall@20: 0.1726 ] [ndcg@5: 0.0811 ndcg@10: 0.0939 ndcg@20: 0.1106 ] 
+2025-09-28 11:36:29,733 - Epoch  30 Validation set [recall@5: 0.0824 recall@10: 0.1205 recall@20: 0.1699 ] [ndcg@5: 0.0810 ndcg@10: 0.0933 ndcg@20: 0.1093 ] 
+2025-09-28 11:36:41,844 - Epoch  33 Validation set [recall@5: 0.0816 recall@10: 0.1185 recall@20: 0.1683 ] [ndcg@5: 0.0805 ndcg@10: 0.0927 ndcg@20: 0.1087 ] 
+2025-09-28 11:36:43,333 - [recall@5: 0.0809 recall@10: 0.1196 recall@20: 0.1727 ] [ndcg@5: 0.0803 ndcg@10: 0.0932 ndcg@20: 0.1104 ] 
+2025-09-28 11:36:44,675 - [recall@5: 0.0777 recall@10: 0.1134 recall@20: 0.1627 ] [ndcg@5: 0.0777 ndcg@10: 0.0897 ndcg@20: 0.1058 ] 
+2025-09-28 11:36:44,682 - Save model parameters to ./encoder/checkpoint/simgcl_rgcn/simgcl_rgcn-amazon-2023.pth
+2025-09-28 11:36:44,683 - Best Epoch 18. Final test result: {'recall': array([0.07773258, 0.11336152, 0.16271348]), 'ndcg': array([0.07771159, 0.08967693, 0.10583505])}.

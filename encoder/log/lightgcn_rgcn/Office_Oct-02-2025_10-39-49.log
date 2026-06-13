@@ -1,0 +1,12 @@
+2025-10-02 10:39:49,517 - {'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': True, 'loss': 'pairwise', 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_agcf', 'name': 'Office', 'mat_type': 'uai', 'pre_norm': True, 'user_num': 6338, 'item_num': 4461, 'user_item_num': 10799, 'attr_num': 4065}, 'model': {'name': 'lightgcn_rgcn', 'label': 'ori', 'keep_rate': 0.9, 'embedding_size': 64, 'use_unify_layer_num': True, 'layer_num': 3, 'reg_weight': '5e-6', 'amazon': {'keep_rate': 0.9, 'layer_num': 3, 'reg_weight': 1e-07, 'eps': 0.1}, 'yelp': {'keep_rate': 0.9, 'layer_num': 3, 'reg_weight': 1e-06, 'eps': 0.1}, 'steam': {'keep_rate': 0.8, 'layer_num': 3, 'reg_weight': 1e-07, 'eps': 0.2}, 'Office': {'keep_rate': 0.9, 'layer_num': 3, 'reg_weight': '5e-6', 'eps': 0.1}}}
+2025-10-02 10:39:50,751 - only integer tensors of a single element can be converted to an index
+Traceback (most recent call last):
+  File "/root/RLMRec/encoder/trainer/utils.py", line 15, in wrapper
+    return func(*args, **kwargs)
+  File "/root/RLMRec/encoder/trainer/trainer.py", line 85, in train
+    self.train_epoch(model, epoch_idx)
+  File "/root/RLMRec/encoder/trainer/trainer.py", line 60, in train_epoch
+    loss, loss_dict = model.cal_loss(batch_data)
+  File "/root/RLMRec/encoder/models/general_cf/lightgcn_rgcn.py", line 145, in cal_loss
+    reg_loss = self.reg_weight * reg_params(self)
+TypeError: only integer tensors of a single element can be converted to an index

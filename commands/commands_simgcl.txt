@@ -1,0 +1,15 @@
+# test interval = 3
+python encoder/train_encoder.py --model simgcl --dataset amazon --cuda 0
+python encoder/train_encoder.py --model simgcl --dataset yelp --cuda 0
+python encoder/train_encoder.py --model simgcl --dataset Office --cuda 0
+python encoder/train_encoder.py --model simgcl_gene --dataset amazon --cuda 0
+python encoder/train_encoder.py --model simgcl_gene --dataset yelp --cuda 0
+python encoder/train_encoder.py --model simgcl_gene --dataset Office --cuda 0
+python encoder/train_encoder.py --model simgcl_plus --dataset amazon --cuda 0
+python encoder/train_encoder.py --model simgcl_plus --dataset yelp --cuda 0
+python encoder/train_encoder.py --model simgcl_plus --dataset Office --cuda 0
+python encoder/train_encoder.py --model simgcl_rgcn --dataset amazon --cuda 0
+python encoder/train_encoder.py --model simgcl_rgcn --dataset yelp --cuda 0
+python encoder/train_encoder.py --model simgcl_rgcn --dataset Office --cuda 0
+
+
